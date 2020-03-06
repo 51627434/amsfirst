@@ -39,11 +39,11 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
                     ((methodName = org.apache.axis2.util.JavaUtils.xmlNameToJavaIdentifier(
                             op.getName().getLocalPart())) != null)) {
                 if ("resultNotify".equals(methodName)) {
-                    iptv.ResultNotifyResponse resultNotifyResponse7 = null;
-                    iptv.ResultNotify wrappedParam = (iptv.ResultNotify) fromOM(msgContext.getEnvelope()
+                    ResultNotifyResponse resultNotifyResponse7 = null;
+                    ResultNotify wrappedParam = (ResultNotify) fromOM(msgContext.getEnvelope()
                                                                                           .getBody()
                                                                                           .getFirstElement(),
-                            iptv.ResultNotify.class);
+                            ResultNotify.class);
 
                     resultNotifyResponse7 = skel.resultNotify(wrappedParam);
 
@@ -63,10 +63,10 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
     }
 
     //
-    private org.apache.axiom.om.OMElement toOM(iptv.ResultNotify param,
-        boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(ResultNotify param,
+                                               boolean optimizeContent) throws org.apache.axis2.AxisFault {
         try {
-            return param.getOMElement(iptv.ResultNotify.MY_QNAME,
+            return param.getOMElement(ResultNotify.MY_QNAME,
                 org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -74,10 +74,10 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        iptv.ResultNotifyResponse param, boolean optimizeContent)
+        ResultNotifyResponse param, boolean optimizeContent)
         throws org.apache.axis2.AxisFault {
         try {
-            return param.getOMElement(iptv.ResultNotifyResponse.MY_QNAME,
+            return param.getOMElement(ResultNotifyResponse.MY_QNAME,
                 org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -86,7 +86,7 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
         org.apache.axiom.soap.SOAPFactory factory,
-        iptv.ResultNotifyResponse param, boolean optimizeContent,
+        ResultNotifyResponse param, boolean optimizeContent,
         javax.xml.namespace.QName elementQName)
         throws org.apache.axis2.AxisFault {
         try {
@@ -94,7 +94,7 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
 
             emptyEnvelope.getBody()
                          .addChild(param.getOMElement(
-                    iptv.ResultNotifyResponse.MY_QNAME, factory));
+                    ResultNotifyResponse.MY_QNAME, factory));
 
             return emptyEnvelope;
         } catch (org.apache.axis2.databinding.ADBException e) {
@@ -102,8 +102,8 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
         }
     }
 
-    private iptv.ResultNotifyResponse wrapResultNotify() {
-        iptv.ResultNotifyResponse wrappedElement = new iptv.ResultNotifyResponse();
+    private ResultNotifyResponse wrapResultNotify() {
+        ResultNotifyResponse wrappedElement = new ResultNotifyResponse();
 
         return wrappedElement;
     }
@@ -119,12 +119,12 @@ public class CSPResponseServiceMessageReceiverInOut extends org.apache.axis2.rec
     private Object fromOM(org.apache.axiom.om.OMElement param,
         Class type) throws org.apache.axis2.AxisFault {
         try {
-            if (iptv.ResultNotify.class.equals(type)) {
-                return iptv.ResultNotify.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+            if (ResultNotify.class.equals(type)) {
+                return ResultNotify.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
 
-            if (iptv.ResultNotifyResponse.class.equals(type)) {
-                return iptv.ResultNotifyResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+            if (ResultNotifyResponse.class.equals(type)) {
+                return ResultNotifyResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
         } catch (Exception e) {
             throw org.apache.axis2.AxisFault.makeFault(e);

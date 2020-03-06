@@ -393,7 +393,7 @@ public class CSPResult implements org.apache.axis2.databinding.ADBBean {
                             String nsUri = reader.getNamespaceContext()
                                                            .getNamespaceURI(nsPrefix);
 
-                            return (CSPResult) iptv.ExtensionMapper.getTypeObject(nsUri,
+                            return (CSPResult) ExtensionMapper.getTypeObject(nsUri,
                                 type, reader);
                         }
                     }

@@ -31,7 +31,9 @@ public class CSPResponseServiceSkeleton
 //          this.getClass().getName() + "#resultNotify");
 
 
-
+        //resultNotify0.setCmdResult(0);
+        System.out.println("--------------------------------------------------------------");
+        System.out.println(resultNotify0.getCmdResult());
 
         //获取接收的参数，并将参数赋值给对象
         System.out.println("c2--CSPResponseService---in");

@@ -15,6 +15,6 @@ public interface CSPResponseServiceSkeletonInterface {
      *
      * @param resultNotify
      */
-    public iptv.ResultNotifyResponse resultNotify(
-            iptv.ResultNotify resultNotify);
+    public ResultNotifyResponse resultNotify(
+            ResultNotify resultNotify);
 }
