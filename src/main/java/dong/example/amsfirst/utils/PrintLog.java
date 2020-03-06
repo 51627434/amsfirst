@@ -1,4 +1,4 @@
-package dong.example.amsfirst.utls;
+package dong.example.amsfirst.utils;
 
 import org.springframework.stereotype.Component;
 

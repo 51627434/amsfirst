@@ -6,8 +6,8 @@
  */
 package iptv;
 
-import dong.example.amsfirst.utls.AppUtil;
-import dong.example.amsfirst.utls.PrintLog;
+import dong.example.amsfirst.utils.AppUtils;
+import dong.example.amsfirst.utils.PrintLog;
 
 /**
  *  CSPResponseServiceSkeleton java skeleton for the axisService
@@ -28,7 +28,7 @@ public class CSPResponseServiceSkeleton
 
         //测试bean注入
         PrintLog p = null;
-        p  = (PrintLog) AppUtil.getObject("printLog");
+        p  = (PrintLog) AppUtils.getObject("printLog");
         System.out.println("resultNotify ------------p:"+p);
 
         ResultNotifyResponse resultNotifyResponse = new ResultNotifyResponse();

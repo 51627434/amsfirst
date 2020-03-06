@@ -6,8 +6,8 @@
  */
 package iptv;
 
-import dong.example.amsfirst.utls.AppUtil;
-import dong.example.amsfirst.utls.PrintLog;
+import dong.example.amsfirst.utils.AppUtils;
+import dong.example.amsfirst.utils.PrintLog;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +35,7 @@ public class CSPRequestServiceSkeleton
 
 
         PrintLog p = null;
-        p  = (PrintLog) AppUtil.getObject("printLog");
+        p  = (PrintLog) AppUtils.getObject("printLog");
         System.out.println("execCmd ------------p:"+p);
         CSPResult result = new CSPResult();
 
