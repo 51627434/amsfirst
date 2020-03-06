@@ -6,6 +6,10 @@
  */
 package iptv;
 
+import dong.example.amsfirst.pojo.ResultNotifyReqPo;
+import dong.example.amsfirst.pojo.ResultNotifyResPo;
+import dong.example.amsfirst.service.ICSPResponseService;
+import dong.example.amsfirst.service.impl.CSPResponseServiceImpl;
 import dong.example.amsfirst.utils.AppUtils;
 import dong.example.amsfirst.utils.PrintLog;
 
@@ -26,18 +30,47 @@ public class CSPResponseServiceSkeleton
 //       throw new UnsupportedOperationException("Please implement " +
 //          this.getClass().getName() + "#resultNotify");
 
+
+
+
+        //获取接收的参数，并将参数赋值给对象
+        System.out.println("c2--CSPResponseService---in");
+        String cspId;
+        String lspId;
+        String correlateId;
+        Integer cmdResult;
+        String resultFileURL;
+
+        ResultNotifyReqPo resultNotifyReqPo = new ResultNotifyReqPo();
+
+        resultNotifyReqPo.setCspId(resultNotify0.getCSPID().toString());
+        resultNotifyReqPo.setLspId(resultNotify0.getLSPID().toString());
+        resultNotifyReqPo.setCorrelateId(resultNotify0.getCorrelateID().toString());
+        resultNotifyReqPo.setCmdResult(resultNotify0.getCmdResult());
+        resultNotifyReqPo.setResultFileURL(resultNotify0.getResultFileURL().toString());
+
+        //获取service bean
+
+        ICSPResponseService cspResponseService;
+        cspResponseService = (ICSPResponseService)AppUtils.getObject("cspResponseService");
+
+        ResultNotifyResPo resultNotifyResPo  = cspResponseService.reciveCSPResponseServic(resultNotifyReqPo);
+
+
+
+
         //测试bean注入
-        PrintLog p = null;
-        p  = (PrintLog) AppUtils.getObject("printLog");
-        System.out.println("resultNotify ------------p:"+p);
+//        PrintLog p = null;
+//        p  = (PrintLog) AppUtils.getObject("printLog");
+//        System.out.println("resultNotify ------------p:"+p);
 
         ResultNotifyResponse resultNotifyResponse = new ResultNotifyResponse();
 
         CSPResult result = new CSPResult();
-        result.setResult(0);
+        result.setResult(resultNotifyResPo.getResult());
 
         org.apache.axis2.databinding.types.soapencoding.String errorDescription =  new org.apache.axis2.databinding.types.soapencoding.String();
-        errorDescription.setString("111111");
+        errorDescription.setString(resultNotifyResPo.getErrorDescription());
         result.setErrorDescription(errorDescription);
 
         resultNotifyResponse.setResultNotifyReturn(result);
