@@ -214,9 +214,11 @@ public class ResultNotify implements org.apache.axis2.databinding.ADBBean {
         writeStartElement(null, namespace, "CmdResult", xmlWriter);
 
         if (localCmdResult == Integer.MIN_VALUE) {
+
             writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance",
                 "nil", "1", xmlWriter);
         } else {
+
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
                     localCmdResult));
         }
