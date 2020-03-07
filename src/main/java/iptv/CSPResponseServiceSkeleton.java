@@ -34,6 +34,10 @@ public class CSPResponseServiceSkeleton
         //resultNotify0.setCmdResult(0);
         System.out.println("--------------------------------------------------------------");
         System.out.println(resultNotify0.getCmdResult());
+        System.out.println(resultNotify0.getCSPID());
+        System.out.println(resultNotify0.getLSPID());
+        System.out.println(resultNotify0.getCorrelateID());
+        System.out.println(resultNotify0.getResultFileURL());
 
         //获取接收的参数，并将参数赋值给对象
         System.out.println("c2--CSPResponseService---in");
